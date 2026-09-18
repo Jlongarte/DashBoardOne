@@ -1,9 +1,7 @@
 import { useState } from "react";
 
-const RegisterForm = ({ onRegister }) => {
+const LoginForm = ({ onLogin }) => {
   const [formInfo, setFormInfo] = useState({
-    name: "",
-    lastName: "",
     email: "",
     password: ""
   });
@@ -17,13 +15,10 @@ const RegisterForm = ({ onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    onRegister(formInfo);
+    onLogin(formInfo);
 
     // Vaciamos los campos
     setFormInfo({
-      name: "",
-      lastName: "",
       email: "",
       password: ""
     });
@@ -31,21 +26,7 @@ const RegisterForm = ({ onRegister }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Registro</h2>
-      <input
-        type="text"
-        name="name"
-        value={formInfo.name}
-        placeholder="Nombre"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="lastName"
-        value={formInfo.lastName}
-        placeholder="Apellido"
-        onChange={handleChange}
-      />
+      <h2>Iniciar Sesión</h2>
       <input
         type="email"
         name="email"
@@ -60,9 +41,9 @@ const RegisterForm = ({ onRegister }) => {
         placeholder="Contraseña"
         onChange={handleChange}
       />
-      <button type="submit">Registrar</button>
+      <button type="submit">Entrar</button>
     </form>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;

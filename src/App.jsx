@@ -2,6 +2,7 @@ import { useState } from "react";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import LoginForm from "./components/LoginForm/LoginForm";
 import TodayTasks from "./components/TodayTasks/TodayTasks";
+import Notifications from "./components/Notifications/Notifications"
 
 function App() {
   // Lista con todos los usuarios registrados
@@ -67,6 +68,7 @@ function App() {
         </div>
       )}
       <TodayTasks />
+      <Notifications />
     </main>
     
   );
